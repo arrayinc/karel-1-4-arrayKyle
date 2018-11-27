@@ -5,3 +5,27 @@
  * function to make Karel check for potholes
  * autonomously. 
  */
+import "turns";
+
+function FillPotholes(){
+		while(frontIsClear()){
+		fillPothole();
+		move();
+		
+		}
+		fillPothole();
+}
+function fillPothole(){
+	if(rightIsClear()){
+		turnRight();
+		move();
+		if(noBeepersPresent()){
+			putBeeper();
+		}
+		turnAround();
+		move();
+		turnRight();
+  }
+}
+ 
+ 
